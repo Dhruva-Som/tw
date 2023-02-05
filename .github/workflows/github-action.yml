@@ -10,4 +10,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check path
-        run: pwd
+        run: | 
+          echo pwd
+  Build:
+    needs:
+      - Prerequisite
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+          overwrite-settings: false
+      - name: Checking directory
+        run: ls -lrt
+      - name: Gradle Build
+        run: gradle clean build
+
