@@ -5,5 +5,4 @@ import org.springframework.web.bind.annotation.RestController
 
 @RequestMapping("/api/v1/")
 @RestController
-abstract class BaseRequestController {
-}
+abstract class BaseRequestController

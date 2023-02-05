@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class SpringKotlinBackendServiceApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpringKotlinBackendServiceApplication>(*args)
+    runApplication<SpringKotlinBackendServiceApplication>(*args)
 }

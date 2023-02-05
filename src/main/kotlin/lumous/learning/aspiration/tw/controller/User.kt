@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController
 class User : BaseRequestController() {
 
     @GetMapping("/test")
-    fun getUser():String {
-    return "Connected Successfully"
+    fun getUser(): String {
+        return "Connected Successfully"
     }
 }
