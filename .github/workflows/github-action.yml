@@ -36,5 +36,5 @@ jobs:
       - name: login to docker hub
         run: |
           echo "Login kr rhe h bhaiya ji intzar kro..."
-          docker login -u {{secret.DOCKER_USER}} -p {{secret.DOCKER_SECRET}}
+          docker login -u {{secrets.DOCKER_USER}} -p {{secrets.DOCKER_SECRET}}
 
