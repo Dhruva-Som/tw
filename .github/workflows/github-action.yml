@@ -32,10 +32,12 @@ jobs:
       - Build
     runs-on: [ubuntu-latest]
     steps:
+      - name: Checking current directory
+        run: pwd
+      - name: Checking current directory files
+        run: ls -lrt
       - name: Building Image
-        run: |
-          ls -lrt
-          docker build .
+        run:  docker build .
   PushImage:
     needs:
       - Prerequisite
