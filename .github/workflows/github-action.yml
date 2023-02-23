@@ -34,7 +34,6 @@ jobs:
     steps:
       - name: Building Image
         run: |
-          pwd
           ls -lrt
           docker build .
   PushImage:
