@@ -27,4 +27,14 @@ jobs:
         run: ls -lrt
       - name: Gradle Build
         run: gradle clean build
+  PushImage:
+    needs:
+      - Prerequisite
+      - Build
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: login to docker hub
+        run: |
+          echo "Login kr rhe h bhaiya ji intzar kro..."
+          docker login -u {{secret.DOCKER_USER}} -p {{secret.DOCKER_SECRET}}
 
