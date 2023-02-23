@@ -35,7 +35,7 @@ jobs:
       - name: Building Image
         run: |
           pwd
-          docker build
+          docker build .
   PushImage:
     needs:
       - Prerequisite
