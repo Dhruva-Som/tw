@@ -32,6 +32,7 @@ jobs:
       - Build
     runs-on: [ubuntu-latest]
     steps:
+      - uses: actions/checkout@v3
       - name: Checking current directory
         run: pwd
       - name: Checking current directory files
@@ -40,8 +41,7 @@ jobs:
         run:  docker build .
   PushImage:
     needs:
-      - Prerequisite
-      - Build
+      - BuildImage
     runs-on: [ubuntu-latest]
     env:
       username: ${{secrets.DOCKER_USE}}
