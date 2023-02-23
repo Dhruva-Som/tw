@@ -33,7 +33,7 @@ jobs:
       - Build
     runs-on: [ubuntu-latest]
     env:
-      username: ${{secrets.DOCKER_USE}
+      username: ${{secrets.DOCKER_USE}}
     steps:
       - name: login to docker hub
         run: |
