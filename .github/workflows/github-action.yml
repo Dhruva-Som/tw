@@ -27,6 +27,15 @@ jobs:
         run: ls -lrt
       - name: Gradle Build
         run: gradle clean build
+  BuildImage:
+    needs:
+      - Build
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Building Image
+        run: |
+          pwd
+          docker build
   PushImage:
     needs:
       - Prerequisite
