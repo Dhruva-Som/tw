@@ -34,9 +34,10 @@ jobs:
     runs-on: [ubuntu-latest]
     env:
       username: ${{secrets.DOCKER_USE}}
+      password: ${{secrets.DOCKER_SECRET}}
     steps:
       - name: login to docker hub
         run: |
           echo "Login kr rhe h bhaiya ji intzar kro... ${{secrets.DOCKER_USE}} or $username"
-          docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_SECRET}}
+          docker login -u $username -p $password
 
