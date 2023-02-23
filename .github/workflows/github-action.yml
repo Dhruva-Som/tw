@@ -35,6 +35,7 @@ jobs:
       - name: Building Image
         run: |
           pwd
+          ls -lrt
           docker build .
   PushImage:
     needs:
