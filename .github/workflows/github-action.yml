@@ -32,9 +32,11 @@ jobs:
       - Prerequisite
       - Build
     runs-on: [ubuntu-latest]
+    env:
+      username: ${{secrets.DOCKER_USE}
     steps:
       - name: login to docker hub
         run: |
-          echo "Login kr rhe h bhaiya ji intzar kro... {{secrets.DOCKER_USE}}"
-          docker login -u {{secrets.DOCKER_USER}} -p {{secrets.DOCKER_SECRET}}
+          echo "Login kr rhe h bhaiya ji intzar kro... ${{secrets.DOCKER_USE}} or $username"
+          docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_SECRET}}
 
