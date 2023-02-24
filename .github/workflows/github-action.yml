@@ -31,7 +31,7 @@ jobs:
         run:  docker build .
   BuildImage:
     needs:
-      - Build
+      - BuildApplicationAndImage
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v3
