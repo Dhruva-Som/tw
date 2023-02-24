@@ -28,7 +28,9 @@ jobs:
       - name: Gradle Build
         run: gradle clean build
       - name: Building Image
-        run:  docker build .
+        run: docker build .
+      - name: List docker images
+        run: docker image ls
   BuildImage:
     needs:
       - BuildApplicationAndImage
