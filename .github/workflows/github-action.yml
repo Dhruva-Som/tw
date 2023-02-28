@@ -29,9 +29,7 @@ jobs:
         run: ls -lrt
       - name: Creating Image Tag
         id: image_tag
-        run: |
-          SHORT_SHA = echo 'SHORT_SHA={} | cut -c1-7'>> $GITHUB_SHA ';'
-          echo $SHORT_SHA
+        run: echo 'SHORT_SHA={} | cut -c1-7' >> $GITHUB_SHA ';'
       - name: Gradle Build
         run: gradle clean build
       - name: Building Image
