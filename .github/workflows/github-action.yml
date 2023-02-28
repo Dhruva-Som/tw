@@ -15,7 +15,7 @@ jobs:
         run: echo pwd
       - name: Creating Image Tag
         id: image_tag
-        run: echo 'SHORT_SHA={} | cut -c1-7' >> $GITHUB_SHA ';'
+        run: echo 'SHORT_SHA={}' >> $GITHUB_SHA '| cut -c1-7;'
   BuildApplicationAndImage:
     needs:
       - Prerequisite
