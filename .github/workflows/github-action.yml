@@ -34,7 +34,9 @@ jobs:
       - name: Building Image
         env:
           IMAGE_TAG: ${{ needs.Prerequisite.outputs.SHORT_SHA }}
-        run: docker build -t tw:$IMAGE_TAG .
+        run: |
+          echo $IMAGE_TAG is tag
+          docker build -t tw:$IMAGE_TAG .
       - name: List docker images
         run: docker image ls
   BuildImage:
