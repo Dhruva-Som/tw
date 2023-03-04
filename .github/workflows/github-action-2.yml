@@ -22,7 +22,7 @@ jobs:
       - name: Gradle Build
         run: gradle clean build
       - name: Building Image
-        run: docker build -t tw .
+        run: docker build -t dhruvasom/tw .
       - name: List docker images
         run: docker image ls
       - name: login to docker hub
