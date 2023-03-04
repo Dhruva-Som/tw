@@ -1,0 +1,34 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Prerequisite:
+    runs-on: [ubuntu-latest]
+    env:
+      username: ${{secrets.DOCKER_USE}}
+      password: ${{secrets.DOCKER_SECRET}}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Java Environment
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+          overwrite-settings: false
+      - name: Gradle Build
+        run: gradle clean build
+      - name: Building Image
+        run: docker build -t tw .
+      - name: List docker images
+        run: docker image ls
+      - name: login to docker hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: push image to docker
+        run: docker push tw:latest

@@ -3,7 +3,7 @@ name: Build-Pipeline
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   Prerequisite:
     runs-on: [ubuntu-latest]
