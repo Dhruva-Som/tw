@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: push image to docker
-        run: docker push dhruva/tw:latest
+        run: docker push dhruvasom/tw:latest
