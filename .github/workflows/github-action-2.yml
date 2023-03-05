@@ -19,14 +19,14 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           overwrite-settings: false
+      - name: Log Commit SHA
+        run: echo '${ GITHUB_SHA }' | cut c1-7
       - name: Gradle Build
         run: gradle clean build
       - name: Building Image
         run: docker build -t dhruvasom/tw .
       - name: List docker images
         run: docker image ls
-      - name: Log Commit SHA
-        run: echo '${ GITHUB_SHA }' | cut c1-7
       - name: login to docker hub
         uses: docker/login-action@v2
         with:
