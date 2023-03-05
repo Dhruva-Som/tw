@@ -38,6 +38,7 @@ jobs:
       - name: push image to docker
         run: docker push dhruvasom/tw:latest
   Print:
+    needs: Prerequisite
     runs-on: [ubuntu-latest]
     steps:
       - name: Printing the output
