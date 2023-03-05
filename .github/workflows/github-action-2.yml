@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Log Commit SHA
         id: tag-generator
-        run: echo 'tag={}'>> ${{ github.sha }} | cut -c 1-7 ';'
+        run: echo 'tag={}'>> ${{ github.sha }} | cut -c 1-7 
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Setup Java Environment
