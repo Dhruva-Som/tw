@@ -11,6 +11,8 @@ jobs:
       username: ${{secrets.DOCKER_USE}}
       password: ${{secrets.DOCKER_SECRET}}
     steps:
+      - name: Log Commit SHA
+        run: echo ${{ github.sha }}
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Setup Java Environment
@@ -19,8 +21,6 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           overwrite-settings: false
-      - name: Log Commit SHA
-        run: echo ${{ env.GITHUB_SHA }}
       - name: Gradle Build
         run: gradle clean build
       - name: Building Image
