@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
           overwrite-settings: false
       - name: Log Commit SHA
-        run: echo ${{ GITHUB_SHA }}
+        run: echo ${{ env.GITHUB_SHA }}
       - name: Gradle Build
         run: gradle clean build
       - name: Building Image
