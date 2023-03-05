@@ -10,9 +10,12 @@ jobs:
     env:
       username: ${{secrets.DOCKER_USE}}
       password: ${{secrets.DOCKER_SECRET}}
+    outputs:
+      tag: ${{steps.tag-generator.outputs.tag}}
     steps:
       - name: Log Commit SHA
-        run: echo ${{ github.sha }} | cut -c 1-7
+        id: tag-generator
+        run: echo 'tag={}'>> ${{ github.sha }} | cut -c 1-7 ';'
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Setup Java Environment
